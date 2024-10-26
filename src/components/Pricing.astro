@@ -1,0 +1,79 @@
+---
+interface Plan {
+  name: string;
+  price: string;
+  features: string[];
+  cta: string;
+  popular?: boolean;
+}
+
+const plans: Plan[] = [
+  {
+    name: "Básico",
+    price: "29€/mes",
+    features: [
+      "Hasta 1,000 documentos",
+      "2 usuarios",
+      "Soporte por email",
+      "Almacenamiento básico",
+      "Búsqueda simple"
+    ],
+    cta: "Comenzar gratis"
+  },
+  {
+    name: "Profesional",
+    price: "79€/mes",
+    features: [
+      "Hasta 10,000 documentos",
+      "10 usuarios",
+      "Soporte prioritario",
+      "OCR avanzado",
+      "Búsqueda avanzada",
+      "Flujos de trabajo"
+    ],
+    cta: "Prueba gratuita",
+    popular: true
+  },
+  {
+    name: "Empresa",
+    price: "199€/mes",
+    features: [
+      "Documentos ilimitados",
+      "Usuarios ilimitados",
+      "Soporte 24/7",
+      "API completa",
+      "Personalización total",
+      "Cumplimiento HIPAA"
+    ],
+    cta: "Contactar ventas"
+  }
+];
+---
+
+<section class="py-20 px-4">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-4xl font-bold text-center mb-12">Planes y Precios</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      {plans.map(plan => (
+        <div class={`p-8 rounded-2xl border ${plan.popular ? 'border-blue-500 shadow-lg' : 'border-gray-200'}`}>
+          {plan.popular && <span class="bg-blue-500 text-white px-4 py-1 rounded-full text-sm mb-4 inline-block">Más popular</span>}
+          <h3 class="text-2xl font-bold">{plan.name}</h3>
+          <p class="text-3xl font-bold mt-4">{plan.price}</p>
+          <ul class="mt-8 space-y-4">
+            {plan.features.map(feature => (
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                {feature}
+              </li>
+            ))}
+          </ul>
+          <button class={`w-full mt-8 px-6 py-3 rounded-lg font-medium ${plan.popular ? 'bg-blue-500 text-white' : 'bg-gray-100'}`}>
+            {plan.cta}
+          </button>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

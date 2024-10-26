@@ -1,0 +1,39 @@
+---
+const features = [
+  {
+    title: "Gestión Inteligente",
+    description: "OCR avanzado y categorización automática de documentos médicos",
+    icon: "🔍"
+  },
+  {
+    title: "Seguridad Máxima",
+    description: "Cumplimiento HIPAA y cifrado de extremo a extremo",
+    icon: "🔒"
+  },
+  {
+    title: "Acceso Rápido",
+    description: "Búsqueda instantánea y organización intuitiva",
+    icon: "⚡"
+  },
+  {
+    title: "Colaboración Eficiente",
+    description: "Comparte y colabora de forma segura con tu equipo",
+    icon: "👥"
+  }
+];
+---
+
+<section class="py-20 px-4 bg-gray-50">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-4xl font-bold text-center mb-12">Características Principales</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {features.map(feature => (
+        <div class="p-6 bg-white rounded-xl shadow-sm">
+          <div class="text-4xl mb-4">{feature.icon}</div>
+          <h3 class="text-xl font-bold mb-2">{feature.title}</h3>
+          <p class="text-gray-600">{feature.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

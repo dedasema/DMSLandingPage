@@ -18,7 +18,7 @@ const plans: Plan[] = [
       "Almacenamiento básico",
       "Búsqueda simple"
     ],
-    cta: "Comenzar gratis"
+    cta: "Contáctanos"
   },
   {
     name: "Profesional",
@@ -31,7 +31,7 @@ const plans: Plan[] = [
       "Búsqueda avanzada",
       "Flujos de trabajo"
     ],
-    cta: "Prueba gratuita",
+    cta: "Contáctanos",
     popular: true
   },
   {
@@ -45,7 +45,7 @@ const plans: Plan[] = [
       "Personalización total",
       "Cumplimiento HIPAA"
     ],
-    cta: "Contactar ventas"
+    cta: "Contáctanos"
   }
 ];
 ---
@@ -69,9 +69,12 @@ const plans: Plan[] = [
               </li>
             ))}
           </ul>
-          <button class={`w-full mt-8 px-6 py-3 rounded-lg font-medium ${plan.popular ? 'bg-blue-500 text-white' : 'bg-gray-100'}`}>
-            {plan.cta}
-          </button>
+        <a 
+          class={`w-full mt-8 px-6 py-3 rounded-lg font-medium text-center block ${plan.popular ? 'bg-blue-500 text-white' : 'bg-gray-100'}`}
+          href="https://wa.me/59162795140"
+        >
+          {plan.cta}
+        </a>
         </div>
       ))}
     </div>
